@@ -1,6 +1,18 @@
+using BlogForrest.BusinessLayer.Abstract;
+using BlogForrest.BusinessLayer.Concrete;
+using BlogForrest.DataAccessLayer.Abstract;
+using BlogForrest.DataAccessLayer.Context;
+using BlogForrest.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<BlogContext>();
+
+builder.Services.AddScoped<IBlogService,BlogManager>();
+builder.Services.AddScoped<IBlogDal,EfBlogDal>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
