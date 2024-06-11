@@ -23,15 +23,14 @@ namespace BlogForrest.BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-
         public Blog TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
 
         public void TInsert(Blog entity)
         {
-            throw new NotImplementedException();
+            _blogDal.Insert(entity);
         }
 
         public void TUpdate(Blog entity)
